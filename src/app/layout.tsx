@@ -67,13 +67,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${unbounded.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
-        {/* Skip link: WCAG 2.4.1 Bypass Blocks */}
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-amber-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-indigo-900"
-        >
-          Skip to content
-        </a>
+        {/* Skip link: WCAG 2.4.1 Bypass Blocks. Wrapped in a nav landmark so no
+            body-level content sits outside a region (AChecker ARIA11). */}
+        <nav aria-label="Skip links">
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-amber-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-indigo-900"
+          >
+            Skip to content
+          </a>
+        </nav>
         {/* Synchronous, parse-time scroll reset. Runs during HTML parsing, before
             the browser paints or restores any saved scroll position, so a fresh
             load can never flash mid-page (common on mobile / port-forwarded URLs). */}
@@ -94,7 +97,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <DirectionContract />
         <ScrollReset />
         {children}
-        <ScrollToTop />
+        {/* Named complementary region so the floating control is inside a
+            landmark (AChecker: all content contained by landmarks). */}
+        <aside aria-label="Scroll to top">
+          <ScrollToTop />
+        </aside>
       </body>
     </html>
   );

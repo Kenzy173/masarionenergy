@@ -43,7 +43,13 @@ export function Hero() {
         <HeroVideo onReady={() => setVideoReady(true)} />
 
       <div className="relative mx-auto flex min-h-[58vh] max-w-6xl items-center px-6 py-14 md:min-h-[64vh] md:py-20">
-        <div className="max-w-3xl motion-safe:animate-[hero-in_0.7s_ease-out_both]">
+        {/* Opaque backdrop behind the headline block: guarantees WCAG contrast
+            over the footage (1.4.3) while the video still shows to the right. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-y-0 left-0 w-[min(52rem,100%)] bg-indigo-700"
+        />
+        <div className="relative max-w-3xl motion-safe:animate-[hero-in_0.7s_ease-out_both]">
           <h1 className="text-balance type-display text-paper">
             Masarion Energy
           </h1>
@@ -68,7 +74,9 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="relative border-t border-indigo-600/70">
+      {/* Opaque band behind the stats so label/value contrast is independent
+          of the footage (AChecker was flagging text over the video scrim). */}
+      <div className="relative border-t border-indigo-600/70 bg-indigo-800">
         <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-px px-6 md:grid-cols-4">
           {stats.map((stat) => (
             <div
