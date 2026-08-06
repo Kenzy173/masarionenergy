@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-03T00:00:00.000Z",
+  "title": "Design System: Masarion Energy",
+  "extensions": {
+    "colorMeta": {
+      "indigo-primary": {
+        "role": "primary",
+        "displayName": "Indigo",
+        "canonical": "#12137d",
+        "tonalRamp": ["#050614", "#0a0b3d", "#0c0d5c", "#12137d", "#1a1c96", "#4547b3", "#8f90c9", "#e7e7f5"]
+      },
+      "amber-accent": {
+        "role": "secondary",
+        "displayName": "Amber Rust",
+        "canonical": "#d9660c",
+        "tonalRamp": ["#4a2205", "#6e3308", "#94440a", "#b8550b", "#d9660c", "#ea7a1f", "#f3a668", "#fbe6d2"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1b1b1e"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline and the 50% cost-reduction statement only." },
+      "data": { "displayName": "Data (Mono)", "purpose": "Real measured numbers only — stat values and dollar figures. Never decorative." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "hero-in", "value": "translateY(14px) -> translateY(0), opacity 0 -> 1, 0.7s ease-out", "purpose": "The single authored entrance moment, played once on the hero on load. No other section animates on scroll." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The only button treatment in the system — used identically for the nav CTA, hero CTA, and contact form submit.",
+      "html": "<button class=\"ds-btn-primary\">Request a consultation</button>",
+      "css": ".ds-btn-primary { background: #d9660c; color: #ffffff; padding: 14px 24px; font-family: Archivo, sans-serif; font-weight: 600; font-size: 14px; border: none; border-radius: 2px; cursor: pointer; transition: background 0.15s ease; } .ds-btn-primary:hover { background: #ea7a1f; } .ds-btn-primary:focus-visible { outline: 2px solid #12137d; outline-offset: 2px; } .ds-btn-primary:disabled { background: rgba(217,102,12,0.6); cursor: not-allowed; }"
+    },
+    {
+      "name": "Ghost Link",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action style for nav links, footer links, and inline 'Learn more' affordances. No border, no background, no pill shape.",
+      "html": "<a href=\"#\" class=\"ds-link-ghost\">Learn more</a>",
+      "css": ".ds-link-ghost { color: #12137d; font-family: Archivo, sans-serif; font-weight: 500; font-size: 14px; text-decoration: none; transition: color 0.15s ease; } .ds-link-ghost:hover { color: #d9660c; } .ds-link-ghost:focus-visible { outline: 2px solid #12137d; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Form field style used across the contact form (name, email, company, message).",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-name\">Name</label><input class=\"ds-field-input\" id=\"ds-name\" type=\"text\" /></div>",
+      "css": ".ds-field-label { display:block; font-family: Archivo, sans-serif; font-weight:500; font-size:14px; color:#1b1b1e; margin-bottom:6px; } .ds-field-input { width:100%; background:#ffffff; border:1px solid #e4e1db; border-radius:2px; padding:10px 14px; font-family: Archivo, sans-serif; font-size:15px; color:#1b1b1e; outline:none; transition:border-color 0.15s ease; box-sizing:border-box; } .ds-field-input:focus { border-color:#12137d; } .ds-field-input[aria-invalid=\"true\"] { border-color:#d9660c; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky full-width indigo nav: authored hexagonal mark plus wordmark, text links, one amber CTA.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 28 28\" fill=\"none\"><path d=\"M14 2 L25 8 V20 L14 26 L3 20 V8 Z\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"14\" cy=\"14\" r=\"3.2\" fill=\"currentColor\"/></svg>Masarion Energy</a><div class=\"ds-nav-links\"><a href=\"#\" class=\"ds-nav-link\">Services</a><a href=\"#\" class=\"ds-nav-link\">Contact</a><a href=\"#\" class=\"ds-btn-primary\">Request a consultation</a></div></nav>",
+      "css": ".ds-nav { display:flex; align-items:center; justify-content:space-between; background:#12137d; padding:16px 24px; } .ds-nav-mark { display:flex; align-items:center; gap:10px; color:#ffffff; font-family: Archivo, sans-serif; font-weight:600; font-size:16.8px; text-decoration:none; } .ds-nav-links { display:flex; align-items:center; gap:24px; } .ds-nav-link { color:#e7e7f5; font-family: Archivo, sans-serif; font-weight:500; font-size:14px; text-decoration:none; transition:color 0.15s ease; } .ds-nav-link:hover { color:#ffffff; } .ds-nav-link:focus-visible { outline:2px solid #ffffff; outline-offset:2px; }"
+    },
+    {
+      "name": "Capability List Row",
+      "kind": "custom",
+      "refersTo": "capability-list-row",
+      "description": "Default listing pattern used for service-detail capability lists: full-width rows divided by hairlines, with a reveal-on-hover 'Learn more' affordance.",
+      "html": "<a href=\"#\" class=\"ds-list-row\"><div><h3 class=\"ds-list-row-title\">Oilfield Finance</h3><p class=\"ds-list-row-desc\">Structuring and securing capital for oilfield operations.</p></div><span class=\"ds-list-row-action\">Learn more</span></a>",
+      "css": ".ds-list-row { display:flex; align-items:center; justify-content:space-between; gap:32px; padding:28px 0; border-top:1px solid #e4e1db; text-decoration:none; } .ds-list-row-title { font-family: Archivo, sans-serif; font-weight:500; font-size:20px; color:#1b1b1e; margin:0; } .ds-list-row-desc { font-family: Archivo, sans-serif; font-size:15px; line-height:1.5; color:#4a4a52; margin:6px 0 0; } .ds-list-row-action { font-family: Archivo, sans-serif; font-weight:500; font-size:14px; color:#12137d; opacity:0; transition:opacity 0.15s ease; } .ds-list-row:hover .ds-list-row-action { opacity:1; }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "custom",
+      "refersTo": "service-card",
+      "description": "Named exception to the no-cards default, used only for the Services overview grid (homepage teaser and /services). 4:3 AI-generated photorealistic image (Higgsfield Nano Banana Pro, aka Nano Banana 2), 2px radius, flat at rest, hover scales the image and reveals the arrow. No caption or disclosure label is used, per product owner direction.",
+      "html": "<a href=\"#\" class=\"ds-service-card\"><div class=\"ds-service-card-media\"><img src=\"/images/services/oilfield-finance.webp\" alt=\"\" /></div><div class=\"ds-service-card-body\"><h3 class=\"ds-service-card-title\">Oilfield Finance</h3><p class=\"ds-service-card-desc\">Structuring and securing capital for oilfield operations.</p></div></a>",
+      "css": ".ds-service-card { display:block; text-decoration:none; } .ds-service-card-media { position:relative; aspect-ratio:4/3; overflow:hidden; border-radius:2px; background:#e7e7f5; } .ds-service-card-media img { width:100%; height:100%; object-fit:cover; transition:transform 0.3s ease; } .ds-service-card:hover .ds-service-card-media img { transform:scale(1.04); } .ds-service-card-title { margin-top:16px; font-family: Archivo, sans-serif; font-weight:500; font-size:18px; color:#1b1b1e; } .ds-service-card-desc { margin-top:4px; font-family: Archivo, sans-serif; font-size:15px; line-height:1.5; color:#4a4a52; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Refined Ledger",
+    "overview": "Masarion Energy inherited its dominant color from the company it used to be — a deep, purple-leaning indigo already load-bearing across the predecessor site (energy-vg.com). Rather than inventing a new visual world, this system commits to that color as the whole structural language and raises its execution: large deliberate color fields instead of accent trims, one confident grotesk instead of a template sans, and real figures set in a measuring typeface instead of icon tiles. The system explicitly refuses the two ruts an oilfield-services or B2B-finance brief defaults to — rig-silhouette-and-hazard-orange industrial cliché, and gradient-and-glass startup polish — by choosing neither photography nor decoration and doing the work in color, type, and real proof instead.",
+    "keyCharacteristics": [
+      "One brand color (indigo) carries whole page regions — nav, hero, dividing bands, footer — not just a logo accent.",
+      "Amber is scarce and load-bearing: it appears only on the primary action (every CTA button) and one emphasis word per page, never as decoration.",
+      "Real numbers (stats, dollar figures) are set in a monospace measuring face; body and headline type never is.",
+      "Lists replace cards everywhere a grid would normally appear."
+    ],
+    "rules": [
+      { "name": "The One Field Rule", "body": "Indigo is never used as a small UI accent (a badge, a border, an icon fill). It only appears as a full section-scale field.", "section": "colors" },
+      { "name": "The Earned Mono Rule", "body": "JetBrains Mono is reserved exclusively for real measured data — stat values, dollar figures. It never appears as a stylistic label, tag, or 'technical-looking' decoration.", "section": "colors" },
+      { "name": "The No-Eyebrow Rule", "body": "No heading is preceded by a small-caps kicker or label. The heading itself carries the weight.", "section": "typography" },
+      { "name": "The Flat Ledger Rule", "body": "Nothing on this page is elevated above its background. A section either changes color field or it doesn't; it never lifts.", "section": "elevation" },
+      { "name": "The No-Disclosure Rule", "body": "AI-generated imagery and video (hero video, Service Cards) carry no caption or label identifying them as synthetic or illustrative. Explicit product owner direction — do not reintroduce disclosure text without being asked.", "section": "components" }
+    ],
+    "dos": [
+      "Do use indigo only as a full section-scale field (nav, hero, statement bands, footer) — never as a small accent, badge, or border.",
+      "Do keep amber exclusive to calls to action and single-word emphasis; if a second accent color feels needed, the fix is restraint, not a new hue.",
+      "Do set real measured data (stats, currency figures) in JetBrains Mono; set everything else in Archivo.",
+      "Do use full-width list rows divided by hairlines wherever a 'grid of items' is tempting.",
+      "Do keep buttons and inputs at the 2px radius; keep everything else unrounded."
+    ],
+    "donts": [
+      "Don't introduce new card containers, shadows, or icon-plus-heading tiles elsewhere — the Service Card grid is a named, singular exception, not a precedent to extend to Outcomes, testimonials, or any other listing.",
+      "Don't add a kicker/eyebrow label above any heading.",
+      "Don't add a disclosure caption ('representative footage', 'AI-generated', 'illustrative imagery', or equivalent) to any synthetic media — see the No-Disclosure Rule. This was tried and explicitly reversed by the product owner; do not reintroduce it.",
+      "Don't use gradients, glass/blur effects, or glow shadows anywhere in this system.",
+      "Don't introduce a second accent color; amber is the only one, and its scarcity is the point."
+    ]
+  }
+}
