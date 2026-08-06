@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Unbounded, Plus_Jakarta_Sans } from "next/font/google";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ScrollReset } from "@/components/ScrollReset";
+import { CookieConsent } from "@/components/CookieConsent";
 import "./globals.css";
 
 const unbounded = Unbounded({
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <aside aria-label="Scroll to top">
           <ScrollToTop />
         </aside>
+        <CookieConsent />
       </body>
     </html>
   );
