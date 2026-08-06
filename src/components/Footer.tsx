@@ -39,7 +39,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="type-label text-paper">Services</h3>
+              <h2 className="type-label text-paper">Services</h2>
               <ul className="mt-4 flex flex-col gap-2.5">
                 {services.map((service) => (
                   <li key={service.slug}>
@@ -55,7 +55,7 @@ export function Footer() {
             </div>
 
             <div>
-              <h3 className="type-label text-paper">Company</h3>
+              <h2 className="type-label text-paper">Company</h2>
               <ul className="mt-4 flex flex-col gap-2.5">
                 {primaryNav.map((item) => (
                   <li key={item.href}>
@@ -71,7 +71,7 @@ export function Footer() {
             </div>
 
             <div className="col-span-2 lg:col-span-1">
-              <h3 className="type-label text-paper">Offices</h3>
+              <h2 className="type-label text-paper">Offices</h2>
               <ul className="mt-4 flex flex-col gap-5">
                 {offices.map((office) => (
                   <li key={office.region} className="type-body-sm text-indigo-200">

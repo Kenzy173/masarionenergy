@@ -39,7 +39,7 @@ export function LegalPage({
               {sections.map((section, i) => (
                 <li key={section.heading} className="border-t border-line pt-8">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-mono text-xs text-indigo-300">
+                    <span className="font-mono text-xs text-indigo-500">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h2 className="type-subhead text-ink">{section.heading}</h2>

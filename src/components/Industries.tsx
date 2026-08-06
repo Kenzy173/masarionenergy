@@ -6,7 +6,7 @@ export function Industries() {
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="flex items-center justify-between gap-6">
           <p className="type-kicker text-indigo-500">Industries we provide for</p>
-          <p className="hidden font-mono text-xs text-indigo-300 sm:block">
+          <p className="hidden font-mono text-xs text-indigo-500 sm:block">
             {String(industries.length).padStart(2, "0")} sectors
           </p>
         </div>

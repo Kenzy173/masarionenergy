@@ -22,7 +22,7 @@ export default function OutcomesPage() {
             <ul className="flex flex-col gap-3">
               {outcomes.map((outcome, i) => (
                 <li key={outcome.slug} className="flex items-center gap-2 type-body-sm text-indigo-100">
-                  <span className="font-mono text-xs text-indigo-300">
+                  <span className="font-mono text-xs text-indigo-200">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {outcome.title}

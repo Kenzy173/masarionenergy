@@ -55,7 +55,7 @@ export default async function ServicePage({
                           : "flex items-center gap-2 text-[15px] text-indigo-200 transition-colors hover:text-paper"
                       }
                     >
-                      <span className="font-mono text-xs text-indigo-300">
+                      <span className="font-mono text-xs text-indigo-200">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       {s.name}
@@ -85,7 +85,7 @@ export default async function ServicePage({
               <div className="mb-14 space-y-10">
                 {detail.subsections.map((sub, i) => (
                   <div key={i}>
-                    <h3 className="type-subhead text-ink">{sub.heading}</h3>
+                    <h2 className="type-subhead text-ink">{sub.heading}</h2>
                     {sub.body && (
                       <p className="mt-2 type-body-sm text-ink-soft">
                         {sub.body}

@@ -39,7 +39,7 @@ export function ServiceCards() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/40 via-transparent to-transparent" />
                 {/* Number badge */}
-                <span className="absolute top-3 left-3 font-mono text-xs text-white/80 bg-black/20 rounded-full px-2 py-0.5">
+                <span className="absolute top-3 left-3 font-mono text-xs text-white bg-indigo-900 rounded-full px-2 py-0.5">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>

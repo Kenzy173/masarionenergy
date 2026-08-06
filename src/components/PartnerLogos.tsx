@@ -42,7 +42,7 @@ export function PartnerLogos() {
   return (
     <section className="overflow-hidden border-t border-line bg-paper py-14">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="type-kicker text-center text-indigo-300">Trusted by</p>
+        <p className="type-kicker text-center text-indigo-500">Trusted by</p>
 
         <div className="relative mt-8">
           {/* Logo row: keyed on slide for smooth crossfade */}
@@ -68,19 +68,23 @@ export function PartnerLogos() {
           </div>
 
           {/* Dots */}
-          <div className="mt-8 flex items-center justify-center gap-2">
+          <div className="mt-8 flex items-center justify-center gap-1">
             {Array.from({ length: totalSlides }, (_, i) => (
               <button
                 key={i}
                 type="button"
                 aria-label={`Slide ${i + 1}`}
                 onClick={() => setSlide(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === slide
-                    ? "w-6 bg-indigo-700"
-                    : "w-1.5 bg-line hover:bg-indigo-300"
-                }`}
-              />
+                className="flex h-6 w-6 items-center justify-center"
+              >
+                <span
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === slide
+                      ? "w-6 bg-indigo-700"
+                      : "w-1.5 bg-line hover:bg-indigo-300"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

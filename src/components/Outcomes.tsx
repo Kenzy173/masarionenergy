@@ -27,7 +27,7 @@ export function Outcomes() {
           >
             <div className="flex items-baseline justify-between gap-3">
               <div className="flex items-baseline gap-3">
-                <span className="font-mono text-xs text-indigo-300 shrink-0">
+                <span className="font-mono text-xs text-indigo-500 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="type-data text-indigo-700">

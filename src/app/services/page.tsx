@@ -21,7 +21,7 @@ export default function ServicesPage() {
             <ul className="flex flex-col gap-3">
               {services.map((service, i) => (
                 <li key={service.slug} className="flex items-center gap-2 type-body-sm text-indigo-100">
-                  <span className="font-mono text-xs text-indigo-300">
+                  <span className="font-mono text-xs text-indigo-200">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   {service.name}
@@ -33,6 +33,7 @@ export default function ServicesPage() {
 
         <section className="border-t border-line bg-paper-warm">
           <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+            <h2 className="sr-only">Our services</h2>
             <ServiceCards />
           </div>
         </section>

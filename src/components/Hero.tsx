@@ -7,35 +7,26 @@ import { StatValue } from "./StatValue";
 
 export function Hero() {
   const [videoReady, setVideoReady] = useState(false);
-  const [preloaderGone, setPreloaderGone] = useState(false);
 
   // Reveal after a max wait; skip the preloader entirely for reduced motion.
+  // The full-screen fixed overlay is unmounted the moment the video is ready
+  // (never left lingering) to avoid Android blank-bar compositing artifacts.
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setVideoReady(true);
-      setPreloaderGone(true);
       return;
     }
     const id = setTimeout(() => setVideoReady(true), 4000);
     return () => clearTimeout(id);
   }, []);
 
-  // Fade out + unmount the overlay shortly after the video is ready.
-  useEffect(() => {
-    if (!videoReady) return;
-    const id = setTimeout(() => setPreloaderGone(true), 450);
-    return () => clearTimeout(id);
-  }, [videoReady]);
-
-  const showPreloader = !preloaderGone;
+  const showPreloader = !videoReady;
 
   return (
     <>
       {showPreloader && (
         <div
-          className={`fixed inset-0 z-[80] flex flex-col items-center justify-center bg-indigo-700 transition-opacity duration-[400ms] ease-out ${
-            videoReady ? "pointer-events-none opacity-0" : "opacity-100"
-          }`}
+          className="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-indigo-700"
           aria-hidden="true"
         >
           <div
