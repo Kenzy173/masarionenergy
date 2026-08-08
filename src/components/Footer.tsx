@@ -96,9 +96,7 @@ export function Footer() {
               </a>
               <div className="flex items-center gap-5 border-l border-indigo-700 pl-6">
                 <a
-                  href="https://www.linkedin.com/company/vg-energy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
                   className="text-indigo-200 transition-colors hover:text-paper"
                   aria-label="LinkedIn"
                 >

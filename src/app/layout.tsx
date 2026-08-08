@@ -67,7 +67,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${unbounded.variable} ${plusJakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper text-ink font-sans">
+      {/* suppressHydrationWarning: browser extensions (e.g. Grammarly) inject
+          their own data-* attributes onto <body> client-side, which otherwise
+          trips React's hydration mismatch warning in dev. The attributes are
+          stripped in the static export, so this only guards dev overlays. */}
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-paper text-ink font-sans"
+      >
         {/* Skip link: WCAG 2.4.1 Bypass Blocks. Wrapped in a nav landmark so no
             body-level content sits outside a region (AChecker ARIA11). */}
         <nav aria-label="Skip links">
